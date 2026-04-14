@@ -1,0 +1,21 @@
+# Ignorar carpeta target generada por maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignorar archivos compilados
+*.class
+
+# Ignorar archivos de IDE
+.idea/
+.vscode/
+*.iml
+*.project
+*.classpath
+*.settings/
+
+# Ignorar logs
+*.log
+
+# Ignorar SO
+.DS_Store
+Thumbs.db

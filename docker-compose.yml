@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  ms-usuarios:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ms-usuarios
+    ports:
+      # Exponer el puerto 8081 hacia el host local.
+      # Esto hace que sea accesible vía http://localhost:8081 desde fuera del entorno de Docker (como tu navegador o Postman).
+      - "8081:8081"
+    networks:
+      - fullstack-network
+    restart: unless-stopped
+    environment:
+      # Zona horaria
+      - TZ=America/Santiago
+      
+# Definir una red personalizada para que otros contenedores Docker
+# puedan comunicarse con este servicio fácilmente por su nombre "ms-usuarios".
+networks:
+  fullstack-network:
+    name: fullstack-network
+    driver: bridge
